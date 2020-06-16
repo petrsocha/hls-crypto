@@ -13,4 +13,4 @@ Currently, it contains:
 - Serpent
   - Naive implementation using LUT-based S-boxes (Serpent also uses 4-bit S-boxes)
   
-See Embedded Security Lab on FIT CTU (https://crypto.fit.cvut.cz) for contact information.
+See Embedded Security Lab at CTU FIT (https://crypto.fit.cvut.cz) for contact information.
