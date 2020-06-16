@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "aes.h"
 
 aes_block_t aes_encrypt (aes_block_t plaintext, aes_key_t key) {
