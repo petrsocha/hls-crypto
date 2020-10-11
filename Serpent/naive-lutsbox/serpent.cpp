@@ -12,21 +12,22 @@ serpent_block_t serpent_encrypt (serpent_block_t plaintext, serpent_key_t key) {
 
 	serpent_key_t roundKey;
 
+	prekey = updatePrekey(prekey, 0);
+	roundKey = getRoundKey(prekey, 0);
+	ciphertext = addRoundKey(ciphertext, roundKey);
+
 	for(int i = 0; i < 31; i++){
 	#pragma HLS pipeline
 
-		prekey = updatePrekey(prekey, i);
-		roundKey = getRoundKey(prekey, i);
-		ciphertext = addRoundKey(ciphertext, roundKey);
+		prekey = updatePrekey(prekey, i+1);
+		roundKey = getRoundKey(prekey, i+1);
 		ciphertext = substitutionLayer(ciphertext, i%8);
 		ciphertext = linearTransformation(ciphertext);
+		ciphertext = addRoundKey(ciphertext, roundKey);
 
 	}
 
 	// Last round
-	prekey = updatePrekey(prekey, 31);
-	roundKey = getRoundKey(prekey, 31);
-	ciphertext = addRoundKey(ciphertext, roundKey);
 	ciphertext = substitutionLayer(ciphertext, 7);
 
 	prekey = updatePrekey(prekey, 32);
