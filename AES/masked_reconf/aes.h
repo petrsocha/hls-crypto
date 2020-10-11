@@ -1,8 +1,8 @@
 #include <ap_int.h>
 
-// Versions 1, 2, 3 differ in reconfiguration parallelism.
+// Versions 1, 2 differ in reconfiguration parallelism.
 // Version 1 has smallest area and highest latency
-// Version 3 has largest area and lowest latency
+// Version 2 has largest area and lowest latency
 #define VERSION 2
 
 #define BLOCK_WIDTH 			128
