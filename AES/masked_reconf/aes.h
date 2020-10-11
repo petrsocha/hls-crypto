@@ -3,7 +3,7 @@
 // Versions 1, 2 differ in reconfiguration parallelism.
 // Version 1 has smallest area and highest latency
 // Version 2 has largest area and lowest latency
-#define VERSION 2
+#define VERSION 1
 
 #define BLOCK_WIDTH 			128
 #define BLOCK_BYTE_IDX_WIDTH 	4
